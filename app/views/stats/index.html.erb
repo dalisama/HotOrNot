@@ -1,0 +1,25 @@
+<h1>Listing stats</h1>
+<div id="zone_affichage"> 
+<table>
+  <tr>
+   <th><%= link_to_remote  "Id photo" ,:url =>{ :action => :affichage,:id => "i"}%></th>
+    <th><%=link_to_remote  "Vote" ,:url => { :action => :affichage,:id => "v"}%></th>
+    <th><%= link_to_remote "Display" ,:url => { :action => :affichage,:id => "d"} %></th>
+<th>Rate</th>
+  </tr>
+<% stats=Stat.find(:all) %>
+<% stats.each do |stat| %>
+  <tr>
+    <td><%=h stat.id %></td>
+    <td><%=h  stat.vote %></td>
+    <td><%=h  stat.display%></td>
+    <td><%= "#{(stat.vote.to_f/stat.display.to_f)*100}%   " %></td>
+    <td><%= link_to 'Show', stat %></td>
+
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+
+<%= link_to 'Go to vote', new_stat_path %>

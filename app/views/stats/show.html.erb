@@ -1,0 +1,16 @@
+<p>
+  <b>Vote:</b>
+  <%=h @stat.vote %>
+</p>
+
+<p>
+  <b>Display:</b>
+  <%=h @stat.display %>
+</p>
+<p>
+
+  <%=h image_tag("#{@stat.id}.jpg") %>
+</p>
+
+
+<%= link_to 'Back', stats_path %>

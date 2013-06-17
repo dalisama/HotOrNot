@@ -1,0 +1,18 @@
+<h1>Vote for the best ;)</h1>
+ 
+
+
+
+<div id="vote_zone">
+
+
+
+<tr>
+<td><%= link_to_remote image_tag("#{@rand1}.jpg"),:url =>{ :action => :vote,:id => @rand1,:id_display=>@rand2 }%> </td>
+<td><%= link_to_remote image_tag("#{@rand2}.jpg"),:url =>{ :action => :vote,:id => @rand2,:id_display=>@rand1 }%> </td>
+</tr>
+ </div>
+
+
+
+<%= link_to 'See stats', stats_path %>

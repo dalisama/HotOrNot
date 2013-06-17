@@ -1,0 +1,7 @@
+<li id="foto">
+
+<tr>
+<td><%= link_to_remote image_tag("#{@rand1}.jpg"),:url =>{ :action => :vote,:id => @rand1 }%></td>
+<td><%= link_to_remote image_tag("#{@rand2}.jpg") ,:url =>{ :action => :vote,:id => @rand2 } %></td>
+</tr>
+</li>
